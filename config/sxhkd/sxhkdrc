@@ -6,15 +6,23 @@
 super + Return
 	kitty
 
+# Web Browser
 super + w
 	firefox
 
+# File Manager
 super + r
-	kitty ranger
+	kitty yazi
 
 # program launcher
 super + @space
-	/usr/bin/dmen.sh
+  ~/.config/rofi/bin/launcher
+
+# /usr/bin/dmen.sh
+
+# Power Menu
+super + p
+   ~/.config/rofi/bin/powermenu
 
 # make sxhkd reload its configuration files:
 super + Escape
