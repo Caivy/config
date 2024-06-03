@@ -1,0 +1,8 @@
+http://localhost/makefulltextfeed.php?url=sec%3A%2F%2Fwww.nytimes.com%2Fsvc%2Fcollections%2Fv1%2Fpublish%2Fhttps%3A%2F%2Fwww.nytimes.com%2Finternational%2Fsection%2Fworld%2Frss.xml&max=25&links=footnotes&exc=&submit=Create+Feed World News
+
+http://0.0.0.0/makefulltextfeed.php?url=sec%3A%2F%2Ftechcrunch.com%2Ffeed%2F&max=25&links=remove&exc=1&submit=Create+Feed
+
+https://news.ycombinator.com/rss
+
+https://www.reddit.com/r/linux.rss Linux Reddit
+

@@ -17,6 +17,7 @@ require("lazy").setup({
     -- { import = "lazyvim.plugins.extras.lang.json" },
     -- import/override with your plugins
     { "folke/ts-comments.nvim", enabled = false },
+    { "folke/neodev.nvim", enabled = false },
     { "goolord/alpha-nvim", enabled = false },
     -- { "folke/tokyonight.nvim", enabled = false },
     { "catppuccin/nvim", enabled = false },

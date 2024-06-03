@@ -12,6 +12,20 @@ map("i", "jk", "<ESC>", { desc = "jk to esc", noremap = true })
 -- Quit Neovim
 map("n", "<leader>q", "<cmd>q<cr>", { desc = "Quit Buffer/Neovim", remap = true })
 
+-- files
+map("n", "QQ", ":q!<enter>", { noremap = false })
+map("n", "WW", ":w!<enter>", { noremap = false })
+map("n", "E", "$", { noremap = false })
+map("n", "B", "^", { noremap = false })
+-- map("n", "TT", ":TransparentToggle<CR>", { noremap = true })
+map("n", "ss", ":noh<CR>", { noremap = true })
+
+-- Noice
+map("n", "<leader>nn", ":Noice dismiss<CR>", { noremap = true })
+
+-- Zenmode
+map("n", "<leader>zz", "<cmd>ZenMode<cr>", { desc = "Enable ZenMode", noremap = true })
+
 -- Cmake Tools Neovim Plugin
 map("n", "<leader>cG", "<cmd>CMakeGenerate<cr>", { desc = "CMakeGenerate", remap = true })
 map("n", "<leader>cB", "<cmd>CMakeBuild<cr>", { desc = "CMakeBuild From Generate", remap = true })
@@ -52,7 +66,7 @@ map("v", "<", "<gv", { desc = "Indenting", silent = true, noremap = true })
 map("v", ">", ">gv", { desc = "Indenting", silent = true, noremap = true })
 
 -- navigate to vault
--- map("n", "<leader>oo", "<cmd> silent !tmux neww tmux-sessionizer ~/Documents/personal/Obsidian/Second Brain<cr>")
+map("n", "<leader>oo", "<cmd> silent !tmux neww tmux-sessionizer ~/Documents/personal/Obsidian/Second-Brain<cr>")
 
 -- convert note to template and remove leading white space
 map("n", "<leader>ot", "<cmd>ObsidianTemplate <cr>")
@@ -61,6 +75,13 @@ map("n", "<leader>on", "<cmd>ObsidianNew <cr>")
 -- search for files in full vault
 map("n", "<leader>og", "<cmd>ObsidianSearch<cr>")
 map("n", "<leader>of", "<cmd>ObsidianQuickSwitch<cr>")
+
+-- Paste Images to Obsidian Notes
+map("n", "<leader>op", "<cmd>ObsidianPasteImg<cr>")
+
+-- Daily Notes
+map("n", "<leader>od", "<cmd>ObsidianDailies<cr>")
+map("n", "<leader>oT", "<cmd>ObsidianToday<cr>")
 
 -- Bufferline
 -- map("n", "<S-l>", ":bnext<cr>", { desc = "Move to next tab", noremap = true })

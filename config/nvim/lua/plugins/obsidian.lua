@@ -3,15 +3,7 @@ return {
   version = "*", -- recommended, use latest release instead of latest commit
   lazy = false,
   -- enable = false,
-  -- Replace the above line with this if you only want to load obsidian.nvim for markdown files in your vault:
-  event = {
-    -- If you want to use the home shortcut '~' here you need to call 'vim.fn.expand'.
-    -- E.g. "BufReadPre " .. vim.fn.expand "~" .. "/my-vault/**.md"
-    -- "BufReadPre "
-    --   .. vim.fn.expand("~")
-    --   .. "/Documents/personal/Obsidian/Second Brain/**.md",
-    -- "BufNewFile " .. vim.fn.expand("~") .. "/Documents/personal/Obsidian/Second Brain/**.md",
-  },
+  event = {},
   dependencies = {
     "nvim-lua/plenary.nvim",
   },
@@ -19,7 +11,7 @@ return {
     workspaces = {
       {
         name = "Second Brain",
-        path = "",
+        path = "~/Documents/personal/Obsidian/Second-Brain/",
         overrides = {
           notes_subdir = "1 - Inbox",
         },
@@ -27,19 +19,6 @@ return {
     },
     disable_frontmatter = true,
     note_id_func = function(title)
-      -- Create note IDs in a Zettelkasten format with a timestamp and a suffix.
-      -- In this case a note with the title 'My new note' will be given an ID that looks
-      -- like '1657296016-my-new-note', and therefore the file name '1657296016-my-new-note.md'
-      -- local suffix = ""
-      -- if title ~= nil then
-      --   -- If title is given, transform it into valid file name.
-      --   suffix = title:gsub(" ", "-"):gsub("[^A-Za-z0-9-]", ""):lower()
-      -- else
-      --   -- If title is nil, just add 4 random uppercase letters to the suffix.
-      --   for _ = 1, 4 do
-      --     suffix = suffix .. string.char(math.random(65, 90))
-      --   end
-      -- end
       return tostring(title)
     end,
     picker = {
@@ -54,13 +33,23 @@ return {
         insert_link = "<C-l>",
       },
     },
+    daily_notes = {
+      -- Optional, if you keep daily notes in a separate directory.
+      folder = "4 - Daily",
+      -- Optional, if you want to change the date format for the ID of daily notes.
+      date_format = "%d-%m-%Y",
+      -- Optional, if you want to change the date format of the default alias of daily notes.
+      alias_format = "%B %-d, %Y",
+      -- Optional, if you want to automatically insert a template from your template directory like 'daily.md'
+      template = "Daily",
+    },
     templates = {
       subdir = "3 - Template",
       date_format = "%d-%m-%Y",
       time_format = "%H:%M",
       substitutions = {
-        time24 = function()
-          return os.date("%H:%M:%S")
+        time_nang = function()
+          return os.date("%A, %B %d, %I:%M %p", os.time())
         end,
         time12 = function()
           -- Conversion to 12-hour format with AM/PM
